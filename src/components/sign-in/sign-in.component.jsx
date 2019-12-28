@@ -5,6 +5,8 @@ import './sign-in.styless.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 class Signin extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +46,8 @@ class Signin extends React.Component {
                         value={this.state.password} handleChange={this.handleChange} required 
                         label="password"/>
 
-                    <CustomButton>Sign In</CustomButton>
+                    <CustomButton type="submit">Sign In</CustomButton>
+                    <CustomButton onClick={signInWithGoogle}>Sign In With Google</CustomButton>
                 </form>
             </div>
         );
