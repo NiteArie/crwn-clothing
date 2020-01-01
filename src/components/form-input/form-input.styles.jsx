@@ -35,7 +35,7 @@ export const FormInputContainer = styled.input`
         outline: none;
     }
   
-    &:focus ~ .form-input-label {
+    &:focus ~ label {
         ${shrinkLabelStyles}
     }
 `
