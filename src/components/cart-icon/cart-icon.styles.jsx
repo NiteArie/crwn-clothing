@@ -1,4 +1,4 @@
-import style from 'styled-components';
+import styled from 'styled-components';
 
 import { ReactComponent as ShoppingIconSVG} from '../../assets/shopping.svg';
 

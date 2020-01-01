@@ -6,7 +6,12 @@ import './checkout-item.styles.scss';
 
 import { connect } from 'react-redux';
 
-import { CheckoutItemContainer, ImageContainer, TextContainer, QuantityContainer, RemoveButtonContainer } from './checkout-item.styles';
+import { CheckoutItemContainer,
+    ImageContainer,
+    TextContainer,
+    CheckoutItemImage,
+    QuantityContainer,
+    RemoveButtonContainer } from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem, ...otherProps}) => {
     const { name, imageUrl, quantity, price } = cartItem;
@@ -14,7 +19,7 @@ const CheckoutItem = ({ cartItem, ...otherProps}) => {
     return (
         <CheckoutItemContainer>
             <ImageContainer>
-                <img src={imageUrl} alt="item" />
+                <CheckoutItemImage src={imageUrl} alt="item" />
             </ImageContainer>
                 <TextContainer>{name}</TextContainer>
                 <QuantityContainer>
