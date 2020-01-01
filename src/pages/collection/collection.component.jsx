@@ -7,19 +7,25 @@ import { selectCollection } from '../../redux/shop/shop.selectors';
 
 import './collection.styles.scss';
 
+import {
+    CollectionPageContainer,
+    CollectionPageTitle,
+    ItemsContainer,
+} from './collection.styles';
+
 const CollectionPage = ({ match, collection}) => {
     const { title, items } = collection;
     return (
-        <div className="collection-page">
-            <h2 className="title">{title}</h2>
-            <div className="items">
+        <CollectionPageContainer>
+            <CollectionPageTitle>{title}</CollectionPageTitle>
+            <ItemsContainer>
                 {
                     items.map(item => (
                         <CollectionItem key={item.id} item={item}/>
                     ))
                 }
-            </div>
-        </div>
+            </ItemsContainer>
+        </CollectionPageContainer>
     );
 }
 
