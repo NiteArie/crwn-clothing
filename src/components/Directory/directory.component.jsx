@@ -7,14 +7,16 @@ import { createStructuredSelector } from 'reselect';
 import MenuItem from '../MenuItem/menu-item.component';
 import './directory.styles.scss';
 
+import { DirectoryMenuContainer } from './directory.styles';
+
 const Directory = ({ sections }) => {
   let menuItems = sections.map(({id, ...sectionProps}) => {
       return <MenuItem key={id} {...sectionProps} />
   })
   return (
-      <div className="directory-menu">
+      <DirectoryMenuContainer>
           {menuItems}
-      </div>
+      </DirectoryMenuContainer>
   );
 }
 
