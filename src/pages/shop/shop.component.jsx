@@ -4,9 +4,19 @@ import { Route, Switch } from 'react-router-dom';
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 import CollectionPage from '../../pages/collection/collection.component';
 
+import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
+
 class ShopPage extends React.Component {
 
-    
+    unsubscribeFromSnapshot = null;
+
+    componentDidMount() {
+        const collectionRef = firestore.collection('collections');
+
+        collectionRef.onSnapshot(async snapshot => {
+            convertCollectionsSnapshotToMap(snapshot);
+        })
+    }
 
     render() {
         const { match } = this.props;
