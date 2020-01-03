@@ -6,7 +6,7 @@ import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 
 import CollectionOverviewContainer from '../../components/collection-overview/collection-overview.container';
 import CollectionPageContainer from '../../pages/collection/collection.container';
-
+    
 class ShopPage extends React.Component {
 
 
